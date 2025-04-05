@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import { Eye, EyeOff, Loader2, Lock, Mail, MessageSquare } from 'lucide-react';
 import { useAuthStore } from '@/store/useAuthStore';
 import AuthImagePattern from '@/components/AuthImagePattern';
-// import SplitText from '@/components/reactbits/SplitText';
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -31,19 +30,6 @@ const Login = () => {
                 <MessageSquare className='text-primary h-6 w-6' />
               </div>
               <h1 className='mt-2 text-2xl font-bold'>Welcome Back</h1>
-              {/* <SplitText
-                text='Welcome Back'
-                className='mt-2 text-2xl font-bold'
-                delay={50}
-                animationFrom={{
-                  opacity: 0,
-                  transform: 'translate3d(0,50px,0)',
-                }}
-                animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
-                easing='easeOutCubic'
-                threshold={0.2}
-                rootMargin='-50px'
-              /> */}
               <p className='text-base-content/60'>Sign in to your account</p>
             </div>
           </div>
