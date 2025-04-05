@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { Eye, EyeOff, Loader2, Lock, Mail, MessageSquare } from 'lucide-react';
 import { useAuthStore } from '@/store/useAuthStore';
 import AuthImagePattern from '@/components/AuthImagePattern';
-import SplitText from '@/components/reactbits/SplitText';
+// import SplitText from '@/components/reactbits/SplitText';
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -30,8 +30,8 @@ const Login = () => {
               <div className='bg-primary/10 group-hover:bg-primary/20 flex h-12 w-12 items-center justify-center rounded-xl transition-colors'>
                 <MessageSquare className='text-primary h-6 w-6' />
               </div>
-              {/* <h1 className='mt-2 text-2xl font-bold'>Welcome Back</h1> */}
-              <SplitText
+              <h1 className='mt-2 text-2xl font-bold'>Welcome Back</h1>
+              {/* <SplitText
                 text='Welcome Back'
                 className='mt-2 text-2xl font-bold'
                 delay={50}
@@ -43,7 +43,7 @@ const Login = () => {
                 easing='easeOutCubic'
                 threshold={0.2}
                 rootMargin='-50px'
-              />
+              /> */}
               <p className='text-base-content/60'>Sign in to your account</p>
             </div>
           </div>
