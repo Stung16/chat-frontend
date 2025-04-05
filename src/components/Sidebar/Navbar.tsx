@@ -3,7 +3,7 @@ import { LogOut, Settings, User } from 'lucide-react';
 import { useAuthStore } from '@/store/useAuthStore';
 
 const Navbar = () => {
-  const { logout, authUser } = useAuthStore();
+  const { logout, authUser, iswaiting } = useAuthStore();
 
   return (
     <header className='bg-base-100 border-base-300 fixed top-0 z-40 w-full border-b backdrop-blur-lg'>
@@ -45,8 +45,9 @@ const Navbar = () => {
                 </Link>
 
                 <button
-                  className='flex items-center gap-2'
+                  className='flex cursor-pointer items-center gap-2'
                   onClick={logout}
+                  disabled={iswaiting}
                 >
                   <LogOut className='size-5' />
                   <span className='hidden sm:inline'>Logout</span>

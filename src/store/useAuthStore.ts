@@ -33,6 +33,7 @@ interface ProfileData {
 }
 
 interface AuthStoreState {
+  iswaiting: boolean;
   authUser: AuthUser | null;
   isSigningUp: boolean;
   isLoggingIn: boolean;
@@ -52,6 +53,7 @@ interface AuthStoreState {
 
 export const useAuthStore = create<AuthStoreState>((set, get) => ({
   authUser: null,
+  iswaiting: false,
   isSigningUp: false,
   isLoggingIn: false,
   isUpdatingProfile: false,
@@ -102,12 +104,15 @@ export const useAuthStore = create<AuthStoreState>((set, get) => ({
 
   logout: async () => {
     try {
+      set({ iswaiting: true });
       await axiosInstance.post('/auth/logout');
       set({ authUser: null });
       toast.success('Logged out successfully');
       get().disconnectSocket();
     } catch (error: any) {
       toast.error(error.response?.data?.message || 'Đăng xuất thất bại');
+    } finally {
+      set({ iswaiting: false });
     }
   },
 
